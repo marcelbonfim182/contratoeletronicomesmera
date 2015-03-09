@@ -1,3 +1,51 @@
 <div data-role="view" data-title="Home" data-layout="main" data-model="APP.models.home">
-  <h1 data-bind="html: title"></h1>
+  
+    <h1 data-bind="html: title"></h1>
+    <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+    <button onclick="window.plugins.socialsharing.share('Here is your PDF file', 'Your PDF', 'file:///test.pdf')">Share PDF</button>
+     <ul  data-source="foo" data-template="foo-template" id="pdflist">
+  </ul>
+    
+        <script>
+
+     
+            
+          
+         
+            
+            
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+console.log("Root = " + fs.root.fullPath);
+caminho = "Root = " + fs.root.fullPath;
+          
+var directoryReader = fs.root.createReader();
+directoryReader.readEntries(function(entries) {
+var i;
+for (i=0; i<entries.length; i++) {
+console.log(entries[i].name);
+$("#pdflist").append($("<li><a href='"+ entries[i].name +"' class='callpdf'>"+ entries[i].name + "</a></li>"));
+    
+    $("#pdflist").append($("<button onclick='sharefile();'>Share PDF</button>"));
+    
+}
+}, function (error) {
+alert(error.code);
+})
+}, function (error) {
+alert(error.code);
+});
+   
+
+   function sharefile(){
+          window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
+var caminho = fs.root.fullPath;
+             alert(caminho);
+          window.plugins.socialsharing.share('Here is your PDF file', 'Your PDF', +caminho+'test.pdf');    
+               });
+  }            
+       
+        
+    </script>   
+    
+    
 </div>

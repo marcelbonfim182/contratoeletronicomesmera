@@ -5,13 +5,148 @@
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
-
+    <link href="styles/stilo_adicional.css" rel="stylesheet" />
+    
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
 
     <script src="scripts/app.js"></script>
+    <script src="scripts/jSignature.min.js"></script> 
+     <script src="http://mrrio.github.io/jsPDF/dist/jspdf.min.js"></script>
+    <script src="http://html2canvas.hertzen.com/build/html2canvas.js"></script> 
+    
+    
+  
+        <script>
+          function okModalViewLogin() {
+               $("#recebe_assinatura").html("");
+        $("#modalview-login").kendoMobileModalView("close");      
+      
+         $('.jSignature').attr('id', 'jSignature');
+                
+                var canvas = document.getElementById("jSignature");
+                var ctx=canvas.getContext("2d");
+  
+                var url = canvas.toDataURL("image/png");
 
+                var newImg = document.createElement("img"); // create img tag
+                newImg.src = url;
+     
+               document.getElementById('recebe_assinatura').appendChild(newImg);
+              $("#recebe_assinatura").append("<div class='contratante'>CONTRATANTE</div>");
+              $("#recebe_assinatura").append("<br><img src='styles/images/assinaturatabletmarcel.png'><div class='contratado'>CONTRATADO</div><br><br>");
+              
+            }        
+    </script>
+    
+       <script>
+         
+          function makepdf() {
+             
+              
+           
+         	var pdf = new jsPDF('p', 'pt', 'letter')
+
+	// source can be HTML-formatted string, or a reference
+	// to an actual DOM element from which the text will be scraped.
+	, source = $('.gerarpdf')[0]
+
+	// we support special element handlers. Register them with jQuery-style 
+	// ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+	// There is no support for any other type of selectors 
+	// (class, of compound) at this time.
+	, specialElementHandlers = {
+		// element with id of "bypass" - jQuery style selector
+		'#bypassme': function(element, renderer){
+			// true = "handled elsewhere, bypass text extraction"
+			return true
+		}
+	}
+
+	margins = {
+      top: 80,
+      bottom: 60,
+      left: 40,
+      width: 522
+    };
+    // all coords and widths are in jsPDF instance's declared units
+    // 'inches' in this case
+    pdf.fromHTML(
+    	source // HTML string or DOM elem ref.
+    	, margins.left // x coord
+    	, margins.top // y coord
+    	, {
+    		'width': margins.width // max width of content on PDF
+    		, 'elementHandlers': specialElementHandlers
+    	},
+    	function (dispose) {
+    	  // dispose: object with X, Y of the last line add to the PDF 
+    	  //          this allow the insertion of new lines after html
+              
+            
+            var pdfOutput = pdf.output("blob");
+              console.log( pdfOutput );
+
+          console.log("file system...");
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
+ 
+   console.log(fileSystem.name);
+   console.log(fileSystem.root.name);
+   console.log(fileSystem.root.fullPath);
+ 
+   fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
+      var fileEntry = entry;
+      console.log(entry);
+ 
+      entry.createWriter(function(writer) {
+         writer.onwrite = function(evt) {
+         console.log("write success");
+      };
+ 
+      console.log("writing to file");
+         writer.write( pdfOutput );
+      }, function(error) {
+         console.log(error);
+      });
+ 
+   }, function(error){
+      console.log(error);
+   });
+},
+function(event){
+ console.log( evt.target.error.code );
+});     
+       },
+    	margins
+    )           
+          
+          };      
+           
+           
+              
+           
+          
+        </script>  
+    <script>
+    //CRIA PASTA NO DIRETORIO RAIZ PARA ARMAZENAR OS PDFS
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onRequestFileSystemSuccess, null); 
+
+function onRequestFileSystemSuccess(fileSystem) { 
+        var entry=fileSystem.root; 
+        entry.getDirectory("contratos", {create: true, exclusive: false}, onGetDirectorySuccess, onGetDirectoryFail); 
+} 
+
+function onGetDirectorySuccess(dir) { 
+      console.log("Created dir "+dir.name); 
+} 
+
+function onGetDirectoryFail(error) { 
+     console.log("Error creating directory "+error.code); 
+} 
+    </script>
+    
+        
 </head>
 <body>
  
@@ -27,8 +162,8 @@
         <div data-role="footer">
             <div data-role="tabstrip">
                 <a href="views/home.html" data-icon="home">Home</a>   
-                <a href="views/settings.html" data-icon="settings">Settings</a>
-                <a href="views/contacts.html" data-icon="contacts">Contacts</a>
+                <a href="views/eventogram.html" data-icon="settings">Eventogram</a>
+                <a href="views/photogramma.html" data-icon="contacts">Photogramma</a>
             </div>
         </div>
     </div>

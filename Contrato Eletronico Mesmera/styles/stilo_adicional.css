@@ -1,0 +1,57 @@
+.titulocontrato {
+font-size: 130%!important;
+text-align: center!important;
+color: #666666;  
+}
+
+.texto_contrato {
+font-size:12px;
+text-transform:uppercase;
+text-align:center;   
+}
+
+h3 {
+    text-align:center;  
+}
+
+#signature img {
+    
+    display:none!important;
+}
+
+.contratante, .contratado {
+margin: 0 auto;
+display: table;
+text-transform: uppercase;
+}
+
+#modalview-open-button {
+margin: 0 auto;
+display: table;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+#recebe_assinatura img {
+    max-width:280px!important;
+    width:100%!important;
+    margin: 0 auto!important;
+    display:table!important;
+}
+
+#pdflist a {
+    display:table;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	
