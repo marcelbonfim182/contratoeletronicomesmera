@@ -147,6 +147,25 @@ function onGetDirectoryFail(error) {
     </script>
     
         
+    <script>
+        //ACESSA A CAMERA E ADICIONA A FOTO NO DOCUMENTO
+    function takePicture() {
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL
+ }); 
+
+function onSuccess(imageData) {
+    var image = document.getElementById('fotorg');
+    image.src = "data:image/jpeg;base64," + imageData;
+}
+
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+}
+    
+  </script>
+    
 </head>
 <body>
  
