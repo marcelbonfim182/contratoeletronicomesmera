@@ -1,7 +1,14 @@
 .titulocontrato {
 font-size: 130%!important;
 text-align: center!important;
-color: #666666;  
+color: #666666;
+width: 100%!important;
+margin: 30px 0px!important;
+}
+.pagina1 {
+
+ width:100%!important;
+    
 }
 
 .texto_contrato {
@@ -20,10 +27,13 @@ h3 {
 }
 
 .contratante, .contratado {
-margin: 0 auto;
-display: table;
+margin: 0 auto!important;
+display: table!important;
 text-transform: uppercase;
+width:100%;
+text-align:center;
 }
+
 
 #modalview-open-button {
 margin: 0 auto;
@@ -32,19 +42,52 @@ margin-top: 50px;
 margin-bottom: 50px;
 }
 
+
 #recebe_assinatura img {
     max-width:280px!important;
     width:100%!important;
     margin: 0 auto!important;
     display:table!important;
+    margin-bottom:4px!important;
+}
+
+
+.space123 {
+    margin-top:240px!important;
+    width:100%!important;
+    height:100px!important;
+    display:none;
 }
 
 #pdflist a {
     display:table;
 }
 
+.estado_contratante { 
+   text-transform:uppercase;
+}
 
+.nome_contratante, .endereco_contratante, .complemento_contratante, .local_servico, .endereco_servico, .bairro_servico, .complemento_servico, .representante_servico, .contato_servico, .bairro_contratante {
+text-transform: capitalize;
+}
 
+.rg_contratante {
+    text-transform:uppercase;
+}
+
+.anexos {
+    width:100%!important;
+    margin-top:160px!important;
+    text-align:center!important;
+ 
+}
+
+.pagina1 img {
+   margin-top:180px!important;
+   margin-bottom:450px!important;
+   margin:0 auto;
+    display:table;
+}
 
 
 
