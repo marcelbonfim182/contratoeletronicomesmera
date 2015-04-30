@@ -1,47 +1,79 @@
-<div data-role="view" data-title="Home" data-layout="main" data-model="APP.models.home">
+<div data-role="view" data-title="Contratos assinados" data-layout="main" data-model="APP.models.home" data-init="mobileListViewPullToRefresh" >
   
+        <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add"></a>
+            <a data-align="right" data-role="button" class="nav-button" href="#/">Index</a>
+        </div>
+    </header>
+    
+    
     <h1 data-bind="html: title"></h1>
-    <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
-    <button onclick="window.plugins.socialsharing.share('Here is your PDF file', 'Your PDF', 'file:///test.pdf')">Share PDF</button>
-     <ul  data-source="foo" data-template="foo-template" id="pdflist">
-  </ul>
+  
+    <ul  data-role="listview" data-style="inset" id="pull-to-refresh-listview" class="pdflist">
+    </ul>
     
+    <script id="pull-to-refresh-template" type="text/x-kendo-template">
+    <div class="tweet">
+        <img class="pullImage" src="#= profile_image_url #" alt="#= from_user #" />#= text #
+        <div class="metadata">
+            <a class="sublink" target="_blank" href="http://twitter.com/\\#!/#= from_user #/status/#= id_str #" rel="nofollow">#= kendo.toString(new Date(Date.parse(created_at)), "dd MMM HH:mm") #</a>
+            |
+            <a class="sublink" href="http://twitter.com/#= from_user #" rel="nofollow">#= from_user #</a>
+        </div>
+    </div>
+</script>
         <script>
+      
+ 
+            
+            
+       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 
-     
-            
-          
-         
-            
-            
- window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-console.log("Root = " + fs.root.fullPath);
-caminho = "Root = " + fs.root.fullPath;
-          
-var directoryReader = fs.root.createReader();
-directoryReader.readEntries(function(entries) {
-var i;
-for (i=0; i<entries.length; i++) {
-console.log(entries[i].name);
-$("#pdflist").append($("<li><a href='"+ entries[i].name +"' class='callpdf'>"+ entries[i].name + "</a></li>"));
-    
-    $("#pdflist").append($("<button onclick='sharefile();'>Share PDF</button>"));
-    
+function onFileSystemSuccess(fileSystem) {
+
+var tmpPath = "contratos/";
+
+fileSystem.root.getDirectory(tmpPath, {create: true, exclusive: false}, getDirSuccess, fail);           
 }
-}, function (error) {
-alert(error.code);
-})
-}, function (error) {
-alert(error.code);
-});
-   
 
-   function sharefile(){
-          window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {
-var caminho = fs.root.fullPath;
-             alert(caminho);
-          window.plugins.socialsharing.share('Here is your PDF file', 'Your PDF', +caminho+'test.pdf');    
-               });
+            
+function fail(error) {
+    alert("Failed to list directory contents: " + error.code);
+}            
+    
+            
+            
+            function readerSuccess(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        console.log(entries[i].name);
+        $(".pdflist").append($("<li><a href='"+entries[i].toURL()+"' class='callpdf'>"+ entries[i].name + "</a></li>"));
+        $(".pdflist").append($("<button href='"+entries[i].toURL()+"' onclick='sharefile(this);'>Share PDF</button>"));
+    }
+}
+
+            
+
+function getDirSuccess(dirEntry) {
+
+// Get a directory reader
+var directoryReader = dirEntry.createReader();
+
+// Get a list of all the entries in the directory
+directoryReader.readEntries(readerSuccess,fail);
+}
+            
+            
+            
+            
+
+   function sharefile(item){
+          var pegaurl = $(item).attr("href");
+          //alert(pegaurl);
+          window.plugins.socialsharing.share('Prestação de Serviço fotos instatâneas', 'Contrato Mesmera Comuncação', pegaurl);    
+             
   }            
        
         
