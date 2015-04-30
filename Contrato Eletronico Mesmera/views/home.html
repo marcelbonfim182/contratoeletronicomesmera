@@ -14,19 +14,21 @@
     <ul  data-role="listview" data-style="inset" id="pull-to-refresh-listview" class="pdflist">
     </ul>
     
-    <script id="pull-to-refresh-template" type="text/x-kendo-template">
-    <div class="tweet">
-        <img class="pullImage" src="#= profile_image_url #" alt="#= from_user #" />#= text #
-        <div class="metadata">
-            <a class="sublink" target="_blank" href="http://twitter.com/\\#!/#= from_user #/status/#= id_str #" rel="nofollow">#= kendo.toString(new Date(Date.parse(created_at)), "dd MMM HH:mm") #</a>
-            |
-            <a class="sublink" href="http://twitter.com/#= from_user #" rel="nofollow">#= from_user #</a>
-        </div>
-    </div>
-</script>
         <script>
       
- 
+  $("#pull-to-refresh-listview").kendoMobileListView({
+    dataSource: dataSource,
+    pullToRefresh: true,
+    appendOnRefresh: true,
+    template: $("#pull-to-refresh-template").text(),
+    pullParameters: function(item) {
+        //item is the first data item in the ListView
+        return {
+            since_id: item.id_str,
+            page: 1
+        };
+    }
+});
             
             
        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
