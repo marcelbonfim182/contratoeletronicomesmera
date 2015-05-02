@@ -189,6 +189,8 @@
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8PackageIdentityName": "1234Telerik.com.telerik.ContratoEletronicoMesmera",
   "CorePlugins": [
+    "com.telerik.plugins.nativepagetransitions@0.3.0",
+    "com.telerik.plugins.wkwebview@0.3.7",
     "org.apache.cordova.camera",
     "org.apache.cordova.contacts",
     "org.apache.cordova.device",
@@ -196,6 +198,7 @@
     "org.apache.cordova.dialogs",
     "org.apache.cordova.file",
     "org.apache.cordova.file-transfer",
+    "org.apache.cordova.inappbrowser",
     "org.apache.cordova.media",
     "org.apache.cordova.media-capture",
     "org.apache.cordova.splashscreen"

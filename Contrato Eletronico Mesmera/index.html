@@ -20,10 +20,13 @@
     <script src="scripts/jquery.maskedinput.min.js" type="text/javascript"></script>
     <script src="scripts/modernizr.custom.js" type="text/javascript"></script>
     <script src="scripts/jquery.dlmenu.js" type="text/javascript"></script>
+    <script src="scripts/NativePageTransitionsKendoAdapter.js" type="text/javascript"></script>
+    
     
     
   
         <script>
+            
           function okModalViewLogin() {
                $("#recebe_assinatura").html("");
         $("#modalview-login").kendoMobileModalView("close");      
@@ -375,11 +378,10 @@ function onGetDirectoryFail(error) {
         
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" id="bypassme" data-icon="organize">Contratos assinados</a>   
+                <a href="views/home.html" data-transition="slide:right" id="bypassme" data-icon="organize">Contratos assinados</a>   
                 <a href="views/eventogram.html"  id="bypassme" data-icon="compose">Assinar contrato</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>

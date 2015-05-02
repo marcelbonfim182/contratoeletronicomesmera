@@ -16,19 +16,7 @@
     
         <script>
       
-  $("#pull-to-refresh-listview").kendoMobileListView({
-    dataSource: dataSource,
-    pullToRefresh: true,
-    appendOnRefresh: true,
-    template: $("#pull-to-refresh-template").text(),
-    pullParameters: function(item) {
-        //item is the first data item in the ListView
-        return {
-            since_id: item.id_str,
-            page: 1
-        };
-    }
-});
+
             
             
        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
@@ -51,7 +39,7 @@ function fail(error) {
     var i;
     for (i=0; i<entries.length; i++) {
         console.log(entries[i].name);
-        $(".pdflist").append($("<li><a href='"+entries[i].toURL()+"' class='callpdf'>"+ entries[i].name + "</a></li>"));
+        $(".pdflist").append($("<li><button href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);'>"+ entries[i].name + "</button></li>"));
         $(".pdflist").append($("<button href='"+entries[i].toURL()+"' onclick='sharefile(this);'>Share PDF</button>"));
     }
 }
@@ -78,6 +66,12 @@ directoryReader.readEntries(readerSuccess,fail);
              
   }            
        
+   function openpdf(abripdf){
+            
+            var pegaurlpdf = $(abripdf).attr("href");
+            window.open(pegaurlpdf, '_system');
+             
+  }        
         
     </script>   
     
