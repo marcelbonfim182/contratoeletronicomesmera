@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Contratos assinados" data-layout="main" data-model="APP.models.home" data-init="mobileListViewPullToRefresh" >
+<div data-role="view" data-title="Contratos assinados" data-layout="main" data-model="APP.models.home">
   
         <header data-role="header">
         <div data-role="navbar">
@@ -7,19 +7,34 @@
             <a data-align="right" data-role="button" class="nav-button" href="#/">Index</a>
         </div>
     </header>
+   
     
-    
-    <h1 data-bind="html: title"></h1>
+    <h1></h1>
   
-    <ul  data-role="listview" data-style="inset" id="pull-to-refresh-listview" class="pdflist">
+    <ul  data-role="scroller" class="pdflist" data-pull="foo" >
     </ul>
+   
+
     
         <script>
-      
+       
+function foo() {
+    console.log("foo!");
+            $('.pdflist li').remove();
+            refreshlist();
+            
+        
+ 
 
+
+
+}
+
+  
             
             
-       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+            
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 
 function onFileSystemSuccess(fileSystem) {
 
@@ -39,8 +54,7 @@ function fail(error) {
     var i;
     for (i=0; i<entries.length; i++) {
         console.log(entries[i].name);
-        $(".pdflist").append($("<li><button href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);'>"+ entries[i].name + "</button></li>"));
-        $(".pdflist").append($("<button href='"+entries[i].toURL()+"' onclick='sharefile(this);'>Share PDF</button>"));
+        $(".pdflist").append($("<li>"+entries[i].name+"<button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
     }
 }
 
@@ -71,7 +85,82 @@ directoryReader.readEntries(readerSuccess,fail);
             var pegaurlpdf = $(abripdf).attr("href");
             window.open(pegaurlpdf, '_system');
              
-  }        
+  }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            function initPullToRefreshScroller(e) {
+  
+
+       //get reference of the scroller 
+            var scroller = $("#scrollSection")
+                           .data("kendoMobileScroller");
+
+            //set scroller options
+            scroller.setOptions({
+                pullToRefresh: true,
+                //pull event is fired when user pulls beyond 
+                //value set using pullOffset
+                pull: refresh,
+                //set the boundary after which the pull will
+                //fire the pull event default value is 140
+                pullOffset: 100,
+                pullTemplate: "<i>Pull to update the number</i>",
+                releaseTemplate: "Release to update the number",
+                refreshTemplate: "Updating..."
+            });
+
+        }
+            
+            
+            
+            
+            function refreshlist() {
+                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+
+function onFileSystemSuccess(fileSystem) {
+
+var tmpPath = "contratos/";
+
+fileSystem.root.getDirectory(tmpPath, {create: true, exclusive: false}, getDirSuccess, fail);           
+}
+
+            
+function fail(error) {
+    alert("Failed to list directory contents: " + error.code);
+}            
+    
+            
+            
+            function readerSuccess(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        console.log(entries[i].name);
+        $(".pdflist").append($("<li>"+entries[i].name+"<button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
+    }
+}
+
+            
+
+function getDirSuccess(dirEntry) {
+
+// Get a directory reader
+var directoryReader = dirEntry.createReader();
+
+// Get a list of all the entries in the directory
+directoryReader.readEntries(readerSuccess,fail);
+}
+            }
+            
+            
+            
+            
         
     </script>   
     

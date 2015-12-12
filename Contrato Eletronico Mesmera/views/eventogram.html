@@ -25,13 +25,25 @@
     <h3>DADOS DO CONTRATANTE:</h3>
     
     
-    <form action="./index.html">
+   
       <ul data-role="listview" data-style="inset" class="contratantes_inputs">
             <li>
-                 <label>NOME:&nbsp
+                 <label>NOME DO REPRESENTANTE:&nbsp
                     <input class="nome_contratante" type="text" value="" />
                 </label>  
             </li>
+            <li>
+                 <label>NOME DA INSTITUIÇÃO:&nbsp
+                    <input class="nome_instituicao" type="text" value="" />
+                </label>  
+            </li>
+          
+            <li>
+                 <label>CNPJ:&nbsp
+                    <input class="cnpj_contratante" type="text" id="cnpj" />
+                </label>  
+            </li>
+
             <li>
                  <label>CPF:&nbsp
                     <input class="cpfcnpj_contratante" type="text" id="cpf" />
@@ -250,7 +262,7 @@
                      <li><span> - Fornecimento de dados essênciais para o funcionamento do serviço com até 5 dias úteis de antecedencia. (hashtag, logomarca, nome do evento).</span></li>
                      <li><span> - Definição e inserção do serviço no layout (mapa) da decoração do evento. Deverá ser informado com até 5 dias úteis de antecedência.</span></li>     
                  </ul></p>
-        
+       
               <br>
         
         <div>.</div>
@@ -264,7 +276,7 @@
                      <li><span> - O prestador de serviço citado nesta não assume responsabilidade referente a eventuais problemas relacionados ao fornecimento de sinal de internet móvel (3G- 4G) ou Wifi.</span></li>
                      <li><span> - Mesmo dispondo de sistema rigoroso de filtragem de fotos, o contratado não assume responsabilidade referente a eventuais problemas relacionados a exibição de imagens de conteúdo impróprio em telão e em totem postado por terceiros no evento (Mau compartamento dos convidados e ou terceiros).</span></li>
                      <li><span> - O prestador de serviço citado nesta poderá desligar o telão e ou suspender (encerrar) os serviços, sem resarcimento de qualquer valor acordado neste, caso o mesmo for utilizado indevidamente por convidados do evento e ou terceiros ( Casos envolvendo falta de segurança no evento (violência) e eventual mal uso do serviço;</span></li>
-                     <li><span> - Fica o contratante responsável pela segurança e por qualquer eventual dano, furto e ou roubo de equipamentos desta empresa prestadora de serviços, enquanto a mesma estiver com todos os equipamentos instalados no local do evento, independente do período. O contratante deverá arcar com todos os prejuizos e danos caso haja algum.</span></li>
+                     <li><span> - Fica o contratante responsável pela segurança e por qualquer eventual dano, furto e ou roubo causado por terceiros referente a equipamentos desta empresa prestadora de serviços, enquanto a mesma estiver com todos os equipamentos instalados no local do evento, independente do período. (O contratante ficará isento de responsabilidade apenas quando haver dano causado por irresponsabilidade do contratado.)  O contratante deverá arcar com todos os prejuizos e danos causados por terceiros caso haja algum.</span></li>
                     </ul>
                 <br><div>.</div>
                      
@@ -272,7 +284,7 @@
              <p class="texto_contrato">O contratado e o contratante presente nesta declaram expressamente que leram detidamente o presente instrumento, e em especial às condições do negócio e suas obrigações, não sendo lícita qualquer futura alegação judicial ou extrajudicial de que desconhecia as condições do negócio.</p>
         <br>
                      
-       
+      
          <h3>VII - DA  ELEIÇÃO DO FORO:</h3>
              <p class="texto_contrato">As partes elegem o foro desta cidade e Comarca de Montes Claros - MG, com renúncia expressa de qualquer outro, por mais privilegiado que seja, para dirimir qualquer dúvida oriunda deste contrato.</p>
              <p class="texto_contrato">Este instrumento rege-se pela Lei no 10.406, de 10-01-2002.</p>
@@ -363,7 +375,7 @@
         </div>
      <a data-click="" id="bypassme" class="bypassme salvarcontrato" data-role="button" data-rel="modalview" href="#modalview-savenomedoarquivo">SALVAR CONTRATO</a>
         
-    </form>
+    
    
                      
     <script>  
@@ -438,6 +450,7 @@ $(document).ready(function(){$(".txt").each(function(){$(this).keyup(function(){
       
    
         $('.cpfcnpj_contratante').mask('000.000.000-00');
+        $('.cnpj_contratante').mask('00.000.000/0000-00');
         $('.rg_contratante').mask('AA 00.000.000-00');
         $('.cep_contratante, .cep_servico').mask('00.000-000');
         $('.estado_contratante,.estado_servico').mask('AA');

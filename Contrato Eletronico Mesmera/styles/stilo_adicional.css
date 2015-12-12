@@ -13,6 +13,26 @@ margin-top: 20px;
     margin-top:20%;
 }
 
+.share{
+float:right;
+background:transparent;
+border:0px;
+display:table;
+}
+.share span {
+font-size:24px!important;    
+}
+
+.pdfbutton {
+   border:0px;
+   background:transparent;
+    float:right;
+}
+
+.pdfbutton span {
+    font-size:22px!important;
+}
+
 .salvarcontrato {
     margin:0 auto;
     display:table;
@@ -984,6 +1004,20 @@ All this is done for any sub-level being entered.
 .gerarpdf .km-content {
     padding-top: 40px!important;
 }
+
+
+.km-view, body, input {
+-webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+    
+       -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+   	backface-visibility: hidden;
+}
+
+
 
 
 

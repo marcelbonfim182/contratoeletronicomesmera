@@ -80,12 +80,18 @@
                                 
                 var nome_contratante = $(".nome_contratante").val(); 
                 $(".nome_contratante").before( nome_contratante );
-                                
-                var cpfcnpj_contratante = $(".cpfcnpj_contratante").val();
+           
+               var cpfcnpj_contratante = $(".cpfcnpj_contratante").val();
                 $(".cpfcnpj_contratante").before( cpfcnpj_contratante );
                                 
                 var rg_contratante = $(".rg_contratante").val();
                 $(".rg_contratante").before( rg_contratante );
+
+                var cnpj_contratante = $(".cnpj_contratante").val();
+                $(".cnpj_contratante").before( cnpj_contratante );
+                                
+                var nome_instituicao = $(".nome_instituicao").val();
+                $(".nome_instituicao").before( nome_instituicao );
                                 
                 var endereco_contratante = $(".endereco_contratante").val();
                 $(".endereco_contratante").before( endereco_contratante );
@@ -361,7 +367,7 @@ function onGetDirectoryFail(error) {
         alert('Failed because: ' + message);
     }
 }
-    
+   
   </script>
     
 </head>
@@ -378,8 +384,8 @@ function onGetDirectoryFail(error) {
         
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-transition="slide:right" id="bypassme" data-icon="organize">Contratos assinados</a>   
-                <a href="views/eventogram.html"  id="bypassme" data-icon="compose">Assinar contrato</a>
+                <a href="views/home.html" data-transition="slide:right"id="bypassme" data-icon="organize">Contratos assinados</a>   
+                <a href="views/eventogram.html" data-transition="slide:left" id="bypassme" data-icon="compose">Assinar contrato</a>
             </div>
         </div>
     </div>
