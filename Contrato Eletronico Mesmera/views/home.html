@@ -1,10 +1,9 @@
-<div data-role="view" data-title="Contratos assinados" data-layout="main" data-model="APP.models.home">
+<div data-role="view" data-title="CONTRATOS MESMERA CO" data-layout="main" data-model="APP.models.home">
   
         <header data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
-            <a data-align="left" data-icon="add" data-role="button"  data-rel="modalview" href="#modalview-add"></a>
-            <a data-align="right" data-role="button" class="nav-button" href="#/">Index</a>
+      
         </div>
     </header>
    
@@ -54,7 +53,7 @@ function fail(error) {
     var i;
     for (i=0; i<entries.length; i++) {
         console.log(entries[i].name);
-        $(".pdflist").append($("<li>"+entries[i].name+"<button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
+        $(".pdflist").append($("<li><label class='nomecontrato'>"+entries[i].name+"</label><button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
     }
 }
 
@@ -142,7 +141,7 @@ function fail(error) {
     var i;
     for (i=0; i<entries.length; i++) {
         console.log(entries[i].name);
-        $(".pdflist").append($("<li>"+entries[i].name+"<button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
+        $(".pdflist").append($("<li><label class='nomecontrato'>"+entries[i].name+"</label><button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
     }
 }
 
