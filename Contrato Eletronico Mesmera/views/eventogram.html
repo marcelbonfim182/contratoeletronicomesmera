@@ -4,6 +4,10 @@
     <h10 style="color:#fff!important">.</h10>
 
      <header data-role="header" id="dl-menu" class="dl-menuwrapper">
+         
+        <img class="titulocontratoeventogram" src="styles/images/eventogram_icon.png">
+        <img class="titulocontratophotogramma" src="styles/images/photogramma_icon.png">
+        <img class="titulocontratoinky" src="styles/images/inky.png">
 	    <button class="dl-trigger"></button> <span id="bypassme" class="titulo_contrato">Contrato Mesmera Comunicação</span> 
 	    <ul class="dl-menu">
 		   <li><span onclick="contrato_eventogram()"><img src="styles/images/eventogram_icon.png"><div>EVENTOGRAM</div></span></li>
@@ -11,6 +15,7 @@
            <li><span onclick="contrato_inky()"><img src="styles/images/inky.png"><div>INKY</div></span></li>
 	   </ul>
      </header>
+    
      <div style="color:#fff!important">.</div>
     <h3 class="titulocontrato">CONTRATO DE PRESTAÇÃO DE SERVIÇO MESMERA COMUNICAÇÃO DIGITAL<div class="produtocontrato">EVENTOGRAM</div></h3>
     <div>.</div> 
@@ -499,28 +504,58 @@ $(document).ready(function(){$(".txt").each(function(){$(this).keyup(function(){
         
         
         
-    function contrato_eventogram() {   
+    function contrato_eventogram() { 
+        $('.km-content').css('opacity','0');
+        $('.titulocontratoeventogram').css('opacity','1');
         $('.produtocontrato').html('');
         $('.produtocontrato').append('- EVENTOGRAM -');
         $('.doobjetodocontrato').html('');
         $('.doobjetodocontrato').append('<ul class="eventogram_info"><li><span>Telão de projeção traseira de policarbonato no formato 1520x2700x3,0mm e projetor Epson w12+ (Projeção Mapeada), treliça Gol A20, notebook samsung core i5 8gb de memoria ram.</span></li><li><span>Quiosque com software de exibição, impressão e gerenciamento de fotos (impressora de fotografia Olmec op1000 ou Sony updr200, 1 tv de 32 polegadas lg, 1 monitor touchscreen 15 pol Bematech, 1 pc core i5 + 4gb de memoria + hd ssd 64gb + wifi usb multilaser, 1 no break, 2 modems com rotemento wifi 2G/3G claro.</span></li><li><span>Selfie Machine (Totem, Tablet samsung Galaxy Tab 4 modelo: SM-T230NT)</span></li><li><span>Sistema rigoroso de filtragem de fotos exibidas no telão gerenciado pelo app do eventogram.</span></li><li><span>1 profissional capacitado para exercer função de manutenção e distribuição das fotos.</span></li><li><span>Transporte.</span></li><li><span>20 plaquinhas divertidas (por dia de evento)</span></li><li><span>1 monopod a regime de comodato somento durante o evento.</span></li></ul>');
-     e.preventDefault();
+        
+        
+           setTimeout(function() {
+         $('.titulocontratoeventogram').css('opacity','0');
+         $('.km-content').css('opacity', '1');
+            }, 1000);
+        
+        e.preventDefault();
         }
         
-    function contrato_photogramma() {   
+    function contrato_photogramma() {
+        $('.km-content').css('opacity','0');
+        $('.titulocontratophotogramma').css('opacity','1');
         $('.produtocontrato').html('');
         $('.produtocontrato').append('- PHOTOGRAMMA -');
         $('.doobjetodocontrato').html('');
         $('.doobjetodocontrato').append('<ul class="photogramma_info"><li><span>Tenda inflável 2,5 x 2,5 x 2,5</span></li><li><span>Totem de fotografia com revelação de fotos na hora (impressora de fotografia Olmec op1000 ou Sony updr200, monitor touch 19 AOC, PC com 4gb de memoria + hd ssd 64gb + Processador Core i5 + Máquina fotográfica Mark II 5d + Lente canon 50mm, Cabos hdmi 10m, 1 no-break, 1 sombrinha difusora com tripé).</span></li><li><span>Totem de exibição de fotos animadas (2 Smart-tvs led 48 polegadas e uma treliça a20)</span></li><li><span>1 profissional capacitado para exercer função de manutenção e distribuição das fotos.</span></li><li><span>Transporte.</span></li><li><span>Adereços divertidos para bater fotos</span></li></ul>');
-     e.preventDefault();
+    
+        setTimeout(function() {
+        $('.titulocontratophotogramma').css('opacity','0');
+        $('.km-content').css('opacity', '1');
+            }, 1000);
+        
+        
+        e.preventDefault();
         }
         
-   function contrato_inky() {   
+        
+        
+   function contrato_inky() {
+        $('.km-content').css('opacity','0');
+        $('.titulocontratoinky').css('opacity','1');
         $('.produtocontrato').html('');
         $('.produtocontrato').append('- INKY GRAFITE DIGITAL -');
         $('.doobjetodocontrato').html('');
         $('.doobjetodocontrato').append('<ul class="inky_info"><li><span>Estrutura (2 treliças gols a20, lona, telão de projeção traseira 1,50 x 2,40, 1 projetor epson w12, 1 sensor, 3 tripés, 1 moldura de quadro desmontável 1,50 x 2,40 cm.)</span></li><li><span>Totem de fotografia com revelação de fotos na hora (impressora de fotografia Olmec op1000 ou Sony updr200,  Cabos hdmi 10m, 1 no-break, 1 webcam microsoft lifecam hd3000,  notebook samsung core i5 8gb de memoria ram, 1 sombrinha difusora com tripé ).</span></li><li><span>Totem de exibição de fotos animadas (2 Smart-tvs led 48 polegadas e uma treliça a20)</span></li><li><span>1 profissional capacitado para exercer função de manutenção e distribuição das fotos.</span></li><li><span>Transporte.</span></li></ul>');
-    e.preventDefault(); 
+    
+       
+       
+         setTimeout(function() {
+         $('.titulocontratoinky').css('opacity','0');
+         $('.km-content').css('opacity', '1');
+            }, 1000);
+       
+       e.preventDefault(); 
    }
         
         

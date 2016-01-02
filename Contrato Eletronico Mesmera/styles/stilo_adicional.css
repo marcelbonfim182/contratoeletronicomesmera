@@ -18,6 +18,7 @@ float:right;
 background:transparent;
 border:0px;
 display:table;
+margin-top:-4px;
 }
 .share span {
 font-size:24px!important;    
@@ -27,11 +28,16 @@ font-size:24px!important;
    border:0px;
    background:transparent;
     float:right;
+    margin-top:-4px;
 }
+
+
 
 .pdfbutton span {
     font-size:22px!important;
 }
+
+
 
 .salvarcontrato {
     margin:0 auto;
@@ -114,6 +120,34 @@ margin-bottom: 50px;
 
 #pdflist a {
     display:table;
+}
+
+
+.pdflist {
+    width:100%;
+    display:table;
+    padding:0px!important;
+}
+
+.pdflist li {
+    padding-left:10px;
+    padding-top:20px;
+    width:100%!important;
+    min-height:60px!important;
+    border-bottom: 1px dotted #ccc;
+    border-left:1px dotted #ccc;
+    border-right:1px dotted #ccc;
+    float:left;
+    display:table;
+}
+
+.pdflist li:first-child {
+border-top: 1px solid #ccc;
+}
+
+.nomecontrato {
+    margin-top:4px!important;
+    
 }
 
 .estado_contratante { 
@@ -1016,6 +1050,29 @@ All this is done for any sub-level being entered.
        -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
    	backface-visibility: hidden;
 }
+
+.km-content {
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    }
+
+.titulocontratoeventogram, .titulocontratophotogramma, .titulocontratoinky  {
+    position:absolute;
+    top:900%;
+    left:50%;
+    margin-left:-5%;
+    font-size:16px;
+    text-transform:uppercase;
+    opacity:0;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+
 
 
 
