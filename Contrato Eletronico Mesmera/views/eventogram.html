@@ -9,7 +9,7 @@
         <img class="titulocontratophotogramma" src="styles/images/photogramma_icon.png">
         <img class="titulocontratoinky" src="styles/images/inky.png">
 	    <button class="dl-trigger"></button> <span id="bypassme" class="titulo_contrato">Contrato Mesmera Comunicação</span> 
-	    <ul class="dl-menu">
+	    <ul id="dlmenuopen" class="dl-menu">
 		   <li><span onclick="contrato_eventogram()"><img src="styles/images/eventogram_icon.png"><div>EVENTOGRAM</div></span></li>
            <li><span onclick="contrato_photogramma()"><img src="styles/images/photogramma_icon.png"><div>PHOTOGRAMMA</div></span></li>
            <li><span onclick="contrato_inky()"><img src="styles/images/inky.png"><div>INKY</div></span></li>
@@ -518,6 +518,8 @@ $(document).ready(function(){$(".txt").each(function(){$(this).keyup(function(){
          $('.km-content').css('opacity', '1');
             }, 1000);
         
+        $( ".dl-trigger" ).trigger( "click" );
+        
         e.preventDefault();
         }
         
@@ -534,7 +536,7 @@ $(document).ready(function(){$(".txt").each(function(){$(this).keyup(function(){
         $('.km-content').css('opacity', '1');
             }, 1000);
         
-        
+        $( ".dl-trigger" ).trigger( "click" );
         e.preventDefault();
         }
         
@@ -555,11 +557,52 @@ $(document).ready(function(){$(".txt").each(function(){$(this).keyup(function(){
          $('.km-content').css('opacity', '1');
             }, 1000);
        
+       $( ".dl-trigger" ).trigger( "click" );
        e.preventDefault(); 
    }
         
+      
         
         
+    $.fn.clickOff = function(callback, selfDestroy) {
+    var clicked = false;
+    var parent = this;
+    var destroy = selfDestroy || true;
+    
+    parent.click(function() {
+        clicked = true;
+    });
+    
+    $(document).click(function(event) { 
+        if (!clicked) {
+            callback(parent, event);
+        }
+        if (destroy) {
+            //parent.clickOff = function() {};
+            //parent.off("click");
+            //$(document).off("click");
+            //parent.off("clickOff");
+        };
+        clicked = false;
+    });
+};
+
+       
+
+
+   
+$("#myDiv").click(function() {
+    alert('clickOn');
+});
+
+$("#myDiv").clickOff(function() {
+    //alert('clickOff');
+      if ($("#dlmenuopen").hasClass("dl-menuopen")) {    
+    $( ".dl-trigger" ).trigger( "click" );
+           } 
+});
+        
+      
     </script>
 </div>
 
