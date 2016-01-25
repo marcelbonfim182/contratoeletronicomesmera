@@ -16,19 +16,16 @@
 
     
         <script>
+            
        
 function foo() {
-    console.log("foo!");
+    //console.log("foo!");
             $('.pdflist li').remove();
-            refreshlist();
+             refreshlist()
             alert("teste");
             
 }
-function initListView(e) {
-
-            alert("teste")
-            
- };           
+         
             
             
  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);

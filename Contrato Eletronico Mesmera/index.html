@@ -61,7 +61,9 @@
            
          
                    function okModalSavepdf() {
-           
+             $( ".titulocontratoeventogram" ).remove();
+             $( ".titulocontratophotogramma" ).remove();
+             $( ".titulocontratoinky" ).remove();
              $(".pagina1").append("<img src='styles/images/mesmeralogo.jpg'>");
              $(".km-view-title span").html("");
              $('.dl-menu').html("");
@@ -295,16 +297,19 @@ function(event){
             'Ok'                  // buttonName
         );  
                  
-              
              } 
-                    
+                   
                  setTimeout(function() {
                         $(".pagina1").html("");
                         $(".km-view-title span").append("Contrato Eventogram");
                         $(".space123").css("display","none");
                         $('.dl-menu').append('<li><span onclick="contrato_eventogram()"><img src="styles/images/eventogram_icon.png"><div>EVENTOGRAM</div></span></li><li><span onclick="contrato_photogramma()"><img src="styles/images/photogramma_icon.png"><div>PHOTOGRAMMA</div></span></li><li><span onclick="contrato_inky()"><img src="styles/images/inky.png"><div>INKY</div></span></li>');
                         $('.capa').html("");
-                         $(".cpftitulo").css("display","none"); 
+                        $(".cpftitulo").css("display","none"); 
+                        $( '.dl-trigger_antes' ).before('<img class="titulocontratoeventogram" src="styles/images/eventogram_icon.png"><img class="titulocontratophotogramma" src="styles/images/photogramma_icon.png"><img class="titulocontratoinky" src="styles/images/inky.png">');
+
+                     
+                     
                  }, 3000);
                        
              
