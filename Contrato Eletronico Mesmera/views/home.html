@@ -21,8 +21,8 @@
 function foo() {
     //console.log("foo!");
             $('.pdflist li').remove();
-             refreshlist()
-            alert("teste");
+             refreshlist();
+            
             
 }
          
@@ -111,11 +111,10 @@ directoryReader.readEntries(readerSuccess,fail);
             });
 
         }
-            
-            
-            
+        
             
             function refreshlist() {
+        
                  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 
 function onFileSystemSuccess(fileSystem) {
