@@ -51,11 +51,13 @@ font-size:24px!important;
 
 
 .titulocontrato {
-font-size: 130%!important;
+font-size: 120%!important;
 text-align: center!important;
 color: #666666;
 width: 100%!important;
 margin: 30px 0px!important;
+padding-left:10px;
+padding-right:10px;
 }
 .pagina1 {
 
@@ -181,12 +183,15 @@ text-transform: capitalize;
 
 .titulo_contrato {
     text-align:center;
+    padding-right:0px;
     display:table;
-    font-size:18px!important;
+    font-size:16px!important;
     text-transform:uppercase;
     width:100%;
     position:fixed;
     top:15px;
+    font-weight: bold;
+    color:#fff;
 }
 
 
@@ -194,13 +199,13 @@ text-transform: capitalize;
 	width: 100%;
 	float: left;
 	position: fixed!important;
-    top: 3px!important;
+    top: 0px!important;
     z-index: 999999999!important;
 	-webkit-perspective: 1000px;
 	perspective: 1000px;
 	-webkit-perspective-origin: 50% 200%;
 	perspective-origin: 50% 200%;
-    background:#fff;
+    background:#0071bc;
     border-bottom:1px solid #ccc;
     padding-bottom:2px;
 }
@@ -210,7 +215,7 @@ text-transform: capitalize;
 }
 
 .dl-menuwrapper button {
-	background: #ccc;
+	background: #1071b9;
 	border: none;
 	width: 48px;
 	height: 45px;
@@ -219,12 +224,14 @@ text-transform: capitalize;
 	position: relative;
 	cursor: pointer;
 	outline: none;
+    top:2px;
+    left:2px;
 }
 
 .dl-menuwrapper button:hover,
 .dl-menuwrapper button.dl-active,
 .dl-menuwrapper ul {
-	background: #aaa;
+	background: #1071b9;
 }
 
 .dl-menuwrapper button:after {
@@ -1072,6 +1079,17 @@ All this is done for any sub-level being entered.
     transition: all 0.3s ease-in-out 0s;
 }
 
+.km-flat .km-rowinsert, .km-flat .km-state-active, .km-flat .km-scroller-pull, .km-flat .km-loader:before, .km-flat .k-slider-selection, .km-flat .km-touch-scrollbar, .km-flat .km-pages .km-current-page, .km-flat .k-slider .k-draghandle, .km-flat .k-slider .k-draghandle:hover, .km-flat .km-tabstrip .km-state-active, .km-flat .km-scroller-refresh.km-load-more, .km-flat .km-popup .k-state-hover, .km-flat .km-popup .k-state-focused, .km-flat .km-popup .k-state-selected, .km-flat .km-actionsheet>li>a:active, .km-flat .km-actionsheet>li>a:hover, .km-flat li.km-state-active .km-listview-link, .km-flat li.km-state-active .km-listview-label, .km-flat .km-listview-label input[type=radio]:checked, .km-flat .km-listview-label input[type=checkbox]:checked {
+  background: #0071bc!important;
+}
+
+.km-view-title {
+background: #1071b9!important;
+color: #fff!important;
+}
+.view-title {
+  color: #fff!important;
+}
 
 
 
