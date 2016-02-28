@@ -9,6 +9,17 @@
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
 
+<preference name="splashscreen" value="splashscreen" />
+ <preference name="SplashScreenDelay" value="10000" />
+ <preference name="splash-screen-delay" value="10000"/>
+
+<preference name="FadeSplashScreenDuration" value="1000"/>
+ <preference name="auto-hide-splash-screen" value="false" />
+ <preference name="AutoHideSplashScreen" value="false" />
+<preference name="ShowSplashScreenSpinner" value="false"/>
+
+
+
 
     <!-- For projects that target Apache Cordova 3.0.0 only, this <feature></feature> block ensures that button events and App plugin-related functionality will work as expected. -->
     <feature name="App">
@@ -17,6 +28,13 @@
     <feature name="SocialSharing">
           <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
+
+<feature name="SplashScreen">
+    <param name="android-package" value="org.apache.cordova.SplashScreen" />
+</feature>
+
+
+
 
     <!-- For projects that target Apache Cordova 3.0 and later, comment out or delete the <plugins></plugins> block and its contents. -->
     <plugins>

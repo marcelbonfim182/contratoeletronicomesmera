@@ -1,3 +1,10 @@
+html, body {
+    padding:0px!important;
+    margin:0px!important;
+    overflow: hidden!important;
+    
+}
+
 .nomedopdf {
     height: 42px;
 border: 0px!important;
@@ -192,6 +199,13 @@ text-transform: capitalize;
     top:15px;
     font-weight: bold;
     color:#fff;
+}
+
+
+.savenomedoarquivo .dl-menuwrapper {
+    background:#fff!important;
+    color:#0071bc!important;
+    
 }
 
 
@@ -1063,6 +1077,7 @@ All this is done for any sub-level being entered.
     -webkit-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
+    overflow-x: hidden!important;
     }
 
 .titulocontratoeventogram, .titulocontratophotogramma, .titulocontratoinky  {
@@ -1091,6 +1106,36 @@ color: #fff!important;
   color: #fff!important;
 }
 
+
+.capa {
+    width:100%;
+}
+
+.textotitulocontrato {
+    margin: 0 auto;
+    display:table;
+    text-align:center;
+    }
+
+.contratantes_inputs li, .contratantes_inputs {
+    
+    list-style-type: none!important;
+}
+
+.salvarbtn {
+    background:#fff!important;
+    color: #0071bc!important;
+    
+}
+
+canvas {
+       -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+    
 
 
 

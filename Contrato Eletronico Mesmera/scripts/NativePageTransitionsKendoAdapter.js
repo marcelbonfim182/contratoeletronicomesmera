@@ -169,7 +169,7 @@
     },
 
     slide : function (direction, href, androiddelay, iosdelay) {
-      event.preventDefault ? event.preventDefault() : event.returnValue = false;
+      //event.preventDefault ? event.preventDefault() : event.returnValue = false;
       transitionStack.push("slide:" + (direction == 'left' ? 'right' : 'left'));
       window.plugins.nativepagetransitions.slide({
             'direction': direction,

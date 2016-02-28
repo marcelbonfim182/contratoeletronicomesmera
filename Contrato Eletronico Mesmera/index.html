@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>  
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
@@ -8,11 +8,11 @@
     <link href="styles/stilo_adicional.css" rel="stylesheet" />
     
     
+    
     <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>   
     <script src="kendo/js/kendo.mobile.min.js"></script>
 
-    
     <script src="scripts/app.js"></script>
     <script src="scripts/jSignature.min.js"></script> 
     <script src="scripts/jspdf.min.js"></script>
@@ -21,6 +21,7 @@
     <script src="scripts/modernizr.custom.js" type="text/javascript"></script>
     <script src="scripts/jquery.dlmenu.js" type="text/javascript"></script>
     <script src="scripts/NativePageTransitionsKendoAdapter.js" type="text/javascript"></script>
+    
     
     
     
@@ -64,10 +65,10 @@
              $( ".titulocontratoeventogram" ).remove();
              $( ".titulocontratophotogramma" ).remove();
              $( ".titulocontratoinky" ).remove();
-             $(".pagina1").append("<img src='styles/images/mesmeralogo.jpg'>");
+             $(".pagina1").append("<img src='styles/images/primeirapagina.jpg' style='width:150%!important; height:auto!important;'>");
              $(".km-view-title span").html("");
              $('.dl-menu').html("");
-             $('.capa').append("<img src='styles/images/primeirapagina.jpg' style='width:100%!important; height:auto!important;'>");
+             //$('.capa').append("<img src='styles/images/primeirapagina.jpg' style='display:table; margin: 0 auto;'>");
            
              $(".space123").css("display","block");        
              $(".cpftitulo").css("display","block"); 
@@ -375,6 +376,31 @@ function onGetDirectoryFail(error) {
    
   </script>
     
+ <script>
+
+     $(window).load(function() {
+ 
+ //alert("window is loaded");
+         
+         
+ setTimeout(function(){
+   $('.assinar').trigger('click'); 
+}, 800);
+         
+  setTimeout(function(){
+   $('.assinados').trigger('click'); 
+}, 1400);        
+  
+    setTimeout(function(){
+   navigator.splashscreen.hide();
+}, 2000);        
+         
+         
+});
+  
+
+</script> 
+    
 </head>
 <body>
  
@@ -389,8 +415,8 @@ function onGetDirectoryFail(error) {
         
         <div data-role="footer">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-transition="slide:right" id="bypassme" data-icon="organize">Contratos assinados</a>
-                <a href="views/assinarcontratos.html" data-transition="slide:left"id="bypassme" data-icon="compose">Assinar contrato</a>   
+                <a href="views/home.html" data-transition="slide:right" id="bypassme" data-icon="organize" class="assinados">Contratos assinados</a>
+                <a href="views/assinarcontratos.html" data-transition="slide:left"id="bypassme" data-icon="compose" class="assinar">Assinar contrato</a>   
                 
             </div>
         </div>

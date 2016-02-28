@@ -5,7 +5,7 @@
   "AppIdentifier": "com.telerik.ContratoEletronicoMesmera",
   "DisplayName": "Contrato Eletronico Mesmera",
   "Author": "Marcel Bomfim",
-  "Description": "",
+  "Description": "Contrato Eletronico Mesmera",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -189,8 +189,7 @@
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8PackageIdentityName": "1234Telerik.com.telerik.ContratoEletronicoMesmera",
   "CorePlugins": [
-    "com.telerik.plugins.nativepagetransitions@0.5.7",
-    "com.telerik.plugins.wkwebview@0.6.8",
+    "com.telerik.plugins.nativepagetransitions@0.6.2",
     "cordova-plugin-camera",
     "cordova-plugin-contacts",
     "cordova-plugin-device",
@@ -201,9 +200,8 @@
     "cordova-plugin-inappbrowser",
     "cordova-plugin-media",
     "cordova-plugin-media-capture",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-whitelist",
-    "nl.x-services.plugins.socialsharing@5.0.6"
+    "nl.x-services.plugins.socialsharing@5.0.10"
   ],
   "iOSDeploymentTarget": "6.0"
 }
