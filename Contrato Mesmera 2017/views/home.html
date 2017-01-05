@@ -1,0 +1,166 @@
+<div data-role="view" data-title="Contratos Assinados" data-layout="main" data-model="APP.models.home">
+  
+        <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+      
+        </div>
+    </header>
+   
+    
+    <h1></h1>
+  
+    <div  data-role="listview"  data-init="initListView"  class="pdflist"  data-item-change="foo" data-pull="foo" data-source=""  data-pull-to-refresh="true" data-append-on-refresh="true">
+    </div> 
+   
+
+    
+        <script>
+            
+       
+function foo() {
+    //console.log("foo!");
+             
+console.log("chamou a funcao");
+            
+           
+             refreshlist();
+            
+            
+}
+         
+            
+            
+ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+
+function onFileSystemSuccess(fileSystem) {
+
+var tmpPath = "contratos/";
+
+fileSystem.root.getDirectory(tmpPath, {create: true, exclusive: false}, getDirSuccess, fail);           
+}
+
+            
+function fail(error) {
+    alert("Failed to list directory contents: " + error.code);
+}            
+    
+            
+            
+            function readerSuccess(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        console.log(entries[i].name);
+        $(".pdflist").append($("<li><label class='nomecontrato'>"+entries[i].name+"</label><button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
+    }
+}
+
+            
+
+function getDirSuccess(dirEntry) {
+
+// Get a directory reader
+var directoryReader = dirEntry.createReader();
+
+// Get a list of all the entries in the directory
+directoryReader.readEntries(readerSuccess,fail);
+}
+            
+            
+            
+            
+
+   function sharefile(item){
+          var pegaurl = $(item).attr("href");
+          //alert(pegaurl);
+          window.plugins.socialsharing.share('Prestação de Serviço fotos instatâneas', 'Contrato Mesmera Comuncação', pegaurl);    
+             
+  }            
+       
+   function openpdf(abripdf){
+            
+            var pegaurlpdf = $(abripdf).attr("href");
+            window.open(pegaurlpdf, '_system');
+             
+  }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            function initPullToRefreshScroller(e) {
+  
+
+       //get reference of the scroller 
+            var scroller = $("#scrollSection")
+                           .data("kendoMobileScroller");
+
+            //set scroller options
+            scroller.setOptions({
+                pullToRefresh: true,
+                //pull event is fired when user pulls beyond 
+                //value set using pullOffset
+                pull: refresh,
+                //set the boundary after which the pull will
+                //fire the pull event default value is 140
+                pullOffset: 100,
+                pullTemplate: "<i> teste Pull to update the number</i>",
+                releaseTemplate: "Release to update the number",
+                refreshTemplate: "Updating..."
+            });
+
+        }
+       
+            
+            function refreshlist() {
+        
+         $('.pdflist li').remove();
+        
+                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+
+function onFileSystemSuccess(fileSystem) {
+
+var tmpPath = "contratos/";
+
+fileSystem.root.getDirectory(tmpPath, {create: true, exclusive: false}, getDirSuccess, fail);           
+}
+
+            
+function fail(error) {
+    alert("Failed to list directory contents: " + error.code);
+}            
+    
+            
+            
+            function readerSuccess(entries) {
+    var i;
+    for (i=0; i<entries.length; i++) {
+        console.log(entries[i].name);
+        $(".pdflist").append($("<li><label class='nomecontrato'>"+entries[i].name+"</label><button class='pdfbutton' href='"+entries[i].toURL()+"' class='callpdf' onclick='openpdf(this);' data-icon='share'><span class='km-icon km-organize'></span></button><button class='share' href='"+entries[i].toURL()+"' onclick='sharefile(this);'><span class='km-icon km-share'></span></button></li>"));
+    }
+}
+
+            
+
+function getDirSuccess(dirEntry) {
+
+// Get a directory reader
+var directoryReader = dirEntry.createReader();
+
+// Get a list of all the entries in the directory
+directoryReader.readEntries(readerSuccess,fail);
+}
+            }
+            
+            
+            
+            
+        
+    </script>   
+    
+    
+</div>
