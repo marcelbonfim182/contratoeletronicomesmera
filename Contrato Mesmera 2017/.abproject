@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Contrato Mesmera 2017",
+  "ProjectGuid": "064d50ae-ce40-40f9-a06b-22e38549f1ff",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.ContratoMesmera2017",
+  "DisplayName": "Contrato Mesmera 2017",
+  "Author": "",
+  "Description": "Contrato Mesmera 2017",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{4ad9771d-4df1-4d26-825b-7613725b0407}",
+  "WP8ProductID": "{8f4ef668-8e15-49de-92ca-e1ed6c46e333}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.ContratoMesmera2017",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
